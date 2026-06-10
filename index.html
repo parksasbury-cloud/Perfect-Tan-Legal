@@ -3,79 +3,249 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perfect Tan Privacy Policy</title>
+<title>Perfect Tan: Your Perfect Tan, Without the Burn</title>
+<meta name="description" content="Perfect Tan tells you exactly how long to tan based on live UV at your location and your skin type. AI skin analysis, smart timers, and burn protection. Free on the App Store.">
+<meta name="apple-itunes-app" content="app-id=6778636219">
+<meta property="og:title" content="Perfect Tan: Your Perfect Tan, Without the Burn">
+<meta property="og:description" content="Live UV tracking + your skin type = the exact minutes to tan today. Free 7-day trial.">
+<meta property="og:type" content="website">
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-         max-width: 720px; margin: 0 auto; padding: 32px 20px; color: #1F2430; line-height: 1.6; }
-  h1 { color: #E8941A; }
-  h2 { margin-top: 32px; }
-  .updated { color: #6B7280; font-size: 14px; }
+  :root {
+    --orange: #F5A623;
+    --orange-dark: #E8941A;
+    --ink: #1F2430;
+    --slate: #6B7280;
+    --cream: #FFF8E7;
+    --peach: #FDEFE0;
+    --green: #2E9E5B;
+    --green-soft: #E8F8EE;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+    background: linear-gradient(180deg, var(--cream) 0%, var(--peach) 100%);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1020px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; }
+  .logo-mark {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: linear-gradient(90deg, var(--orange), var(--orange-dark));
+    display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px;
+  }
+  .nav-cta {
+    background: var(--ink); color: #fff; text-decoration: none; font-weight: 700;
+    font-size: 14px; padding: 10px 18px; border-radius: 24px;
+  }
+
+  /* Hero */
+  .hero { display: flex; align-items: center; gap: 48px; padding: 48px 0 72px; }
+  .hero-copy { flex: 1.15; }
+  .eyebrow {
+    display: inline-block; background: rgba(245,166,35,0.15); color: var(--orange-dark);
+    font-weight: 700; font-size: 13px; padding: 6px 14px; border-radius: 20px; margin-bottom: 18px;
+  }
+  h1 { font-size: clamp(34px, 5.5vw, 54px); font-weight: 800; line-height: 1.08; letter-spacing: -0.5px; }
+  h1 .accent { color: var(--orange-dark); }
+  .sub { font-size: 18px; color: var(--slate); margin: 18px 0 28px; max-width: 460px; }
+  .cta-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .store-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--ink); color: #fff; text-decoration: none;
+    padding: 14px 26px; border-radius: 14px; font-weight: 700; font-size: 16px;
+    box-shadow: 0 8px 24px rgba(31,36,48,0.25); transition: transform .15s ease;
+  }
+  .store-btn:hover { transform: translateY(-2px); }
+  .store-btn .apple { font-size: 22px; }
+  .trial-note { font-size: 13px; color: var(--slate); }
+  .trust { display: flex; gap: 22px; margin-top: 26px; font-size: 13px; color: var(--slate); flex-wrap: wrap; }
+  .trust span::before { content: "✓ "; color: var(--green); font-weight: 700; }
+
+  /* Phone mockup */
+  .hero-phone { flex: 0.85; display: flex; justify-content: center; }
+  .phone {
+    width: 290px; border-radius: 44px; background: #fff; border: 10px solid var(--ink);
+    box-shadow: 0 30px 60px rgba(31,36,48,0.25); overflow: hidden;
+  }
+  .phone-screen { background: linear-gradient(180deg, #FDF6E3 0%, var(--cream) 100%); padding: 22px 16px 26px; }
+  .p-loc { font-size: 12px; font-weight: 600; color: var(--slate); text-align: center; }
+  .uv-ring {
+    width: 140px; height: 140px; border-radius: 50%; margin: 16px auto 8px;
+    background: conic-gradient(var(--orange) 0% 62%, #F1E8D6 62% 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .uv-inner {
+    width: 108px; height: 108px; border-radius: 50%; background: #fff;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .uv-num { font-size: 34px; font-weight: 800; color: var(--orange-dark); }
+  .uv-lab { font-size: 11px; color: var(--slate); font-weight: 600; letter-spacing: 1px; }
+  .p-pill {
+    width: fit-content; margin: 0 auto 14px; background: var(--green-soft); color: var(--green);
+    font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 16px;
+  }
+  .p-card {
+    background: #fff; border-radius: 16px; padding: 13px 14px; margin-bottom: 9px;
+    box-shadow: 0 4px 14px rgba(31,36,48,0.06); font-size: 13px; font-weight: 600;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .p-card .v { color: var(--orange-dark); font-weight: 800; }
+  .p-go {
+    background: linear-gradient(90deg, var(--orange), var(--orange-dark)); color: #fff;
+    text-align: center; border-radius: 14px; padding: 13px; font-weight: 800; font-size: 14px; margin-top: 12px;
+  }
+
+  /* Stat band */
+  .band { background: var(--ink); color: #fff; padding: 44px 0; }
+  .band .wrap { display: flex; gap: 32px; justify-content: space-between; flex-wrap: wrap; }
+  .stat { flex: 1; min-width: 180px; text-align: center; }
+  .stat .n { font-size: 34px; font-weight: 800; color: var(--orange); }
+  .stat .d { font-size: 14px; color: rgba(255,255,255,0.75); margin-top: 4px; }
+
+  /* Features */
+  section.features { padding: 72px 0; }
+  .sec-title { font-size: clamp(26px, 4vw, 36px); font-weight: 800; text-align: center; letter-spacing: -0.4px; }
+  .sec-sub { text-align: center; color: var(--slate); margin: 10px auto 44px; max-width: 520px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+  .card {
+    background: #fff; border-radius: 22px; padding: 26px 22px;
+    box-shadow: 0 10px 30px rgba(31,36,48,0.06);
+  }
+  .card .ic {
+    width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-size: 22px; background: rgba(245,166,35,0.14); margin-bottom: 14px;
+  }
+  .card h3 { font-size: 17px; margin-bottom: 6px; }
+  .card p { font-size: 14px; color: var(--slate); }
+
+  /* Steps */
+  .steps { padding: 0 0 72px; }
+  .step-row { display: flex; gap: 18px; flex-wrap: wrap; }
+  .step { flex: 1; min-width: 220px; background: #fff; border-radius: 22px; padding: 26px 22px; box-shadow: 0 10px 30px rgba(31,36,48,0.06); }
+  .step .num {
+    width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(90deg, var(--orange), var(--orange-dark));
+    color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;
+  }
+  .step h3 { font-size: 16px; margin-bottom: 6px; }
+  .step p { font-size: 14px; color: var(--slate); }
+
+  /* Final CTA */
+  .final {
+    text-align: center; padding: 72px 24px 84px;
+    background: linear-gradient(90deg, var(--orange), var(--orange-dark));
+    color: #fff;
+  }
+  .final h2 { font-size: clamp(28px, 4.5vw, 40px); font-weight: 800; letter-spacing: -0.4px; }
+  .final p { margin: 12px auto 28px; max-width: 440px; opacity: 0.92; }
+  .final .store-btn { background: #fff; color: var(--ink); box-shadow: 0 10px 30px rgba(0,0,0,0.18); }
+  .final .fine { font-size: 12px; opacity: 0.8; margin-top: 16px; }
+
+  footer { padding: 28px 0 40px; text-align: center; font-size: 13px; color: var(--slate); }
+  footer a { color: var(--slate); }
+
+  @media (max-width: 760px) {
+    .hero { flex-direction: column; padding: 24px 0 56px; text-align: center; }
+    .sub { margin-left: auto; margin-right: auto; }
+    .cta-row, .trust { justify-content: center; }
+    .hero-phone { margin-top: 8px; }
+  }
 </style>
 </head>
 <body>
-<h1>Privacy Policy</h1>
-<p class="updated">Last updated: June 9, 2026</p>
 
-<p>Perfect Tan ("we", "our", or "the app") respects your privacy. This policy explains what
-information we collect, how we use it, and the choices you have.</p>
+<div class="wrap">
+  <nav>
+    <div class="logo"><div class="logo-mark">☀️</div> Perfect Tan</div>
+    <a class="nav-cta" href="https://apps.apple.com/app/id6778636219">Get the app</a>
+  </nav>
 
-<h2>Information We Collect</h2>
-<ul>
-  <li><strong>Account information.</strong> If you create an account, we collect your name and
-      email address (or your Apple ID credentials if you use Sign in with Apple).</li>
-  <li><strong>Selfie photos.</strong> If you choose to use skin-type analysis, your photo is sent
-      securely to an AI image-analysis service (Google Gemini) to estimate your Fitzpatrick skin
-      type. Photos are <strong>not stored on our servers</strong> and are not used to train AI models.
-      You can skip this step entirely and choose your skin type manually.</li>
-  <li><strong>Location.</strong> With your permission, we use your device location to fetch the
-      local UV index and weather. Location coordinates are sent to weather data providers
-      (Open-Meteo, BigDataCloud) to retrieve conditions; they are not stored by us.</li>
-  <li><strong>Tanning session data.</strong> Session times, durations, and UV levels are stored on
-      your device, and synced to our cloud database (Google Firebase) if you are signed in.</li>
-  <li><strong>Purchase information.</strong> Subscriptions are processed by Apple or Google.
-      We use RevenueCat to manage subscription status. We never see your payment details.</li>
-</ul>
+  <div class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">☀️ Smart UV-guided tanning</span>
+      <h1>Your perfect tan.<br><span class="accent">Without the burn.</span></h1>
+      <p class="sub">Perfect Tan reads the live UV index at your exact location, matches it to your
+        skin type, and tells you precisely how many minutes to tan today. Then a smart timer
+        watches the clock so you don't have to.</p>
+      <div class="cta-row">
+        <a class="store-btn" href="https://apps.apple.com/app/id6778636219">Download on the App Store</a>
+      </div>
+      <p class="trial-note" style="margin-top:12px;">Free 7-day trial, then $0.49/week. Cancel anytime.</p>
+      <div class="trust">
+        <span>AI skin-type analysis</span>
+        <span>Live UV at your location</span>
+        <span>Burn-safe timers</span>
+      </div>
+    </div>
 
-<h2>How We Use Information</h2>
-<ul>
-  <li>To calculate personalized safe-tanning recommendations</li>
-  <li>To show live UV and weather conditions for your location</li>
-  <li>To track your tanning sessions and progress</li>
-  <li>To manage your subscription</li>
-</ul>
+    <div class="hero-phone">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="p-loc">📍 Myrtle Beach, SC</div>
+          <div class="uv-ring"><div class="uv-inner">
+            <div class="uv-num">6.2</div>
+            <div class="uv-lab">UV INDEX</div>
+          </div></div>
+          <div class="p-pill">Great tanning conditions</div>
+          <div class="p-card"><span>Your session today</span><span class="v">24 min</span></div>
+          <div class="p-card"><span>Best time</span><span class="v">1 PM</span></div>
+          <div class="p-go">Start Tanning</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h2>What We Don't Do</h2>
-<ul>
-  <li>We do not sell your personal information.</li>
-  <li>We do not show third-party advertising.</li>
-  <li>We do not store your selfie photos.</li>
-  <li>We do not track you across other apps or websites.</li>
-</ul>
+<div class="band">
+  <div class="wrap">
+    <div class="stat"><div class="n">15×</div><div class="d">UV intensity swing in a single day. Timing is everything.</div></div>
+    <div class="stat"><div class="n">90%</div><div class="d">of skin cancers are preventable. Tan smart, not long.</div></div>
+    <div class="stat"><div class="n">24/7</div><div class="d">live UV and weather tracking for your exact location.</div></div>
+  </div>
+</div>
 
-<h2>Third-Party Services</h2>
-<p>The app uses these services, each governed by its own privacy policy:</p>
-<ul>
-  <li>Google Firebase (authentication &amp; data storage)</li>
-  <li>Google Gemini API (optional skin-type photo analysis)</li>
-  <li>RevenueCat (subscription management)</li>
-  <li>Open-Meteo &amp; BigDataCloud (weather/UV and location naming; no account data shared)</li>
-</ul>
+<div class="wrap">
+  <section class="features">
+    <h2 class="sec-title">Everything you need to tan smarter</h2>
+    <p class="sec-sub">Built around one idea: the right amount of sun for your skin, every single time.</p>
+    <div class="grid">
+      <div class="card"><div class="ic">🤳</div><h3>AI skin analysis</h3><p>Snap a selfie and our AI identifies your Fitzpatrick skin type in seconds. That's the foundation of every recommendation.</p></div>
+      <div class="card"><div class="ic">📡</div><h3>Live UV tracking</h3><p>Real-time UV index, hourly forecast for today and tomorrow, and the best tanning windows at your location.</p></div>
+      <div class="card"><div class="ic">⏱️</div><h3>Burn-safe timers</h3><p>A session timer tuned to UV, your skin, SPF, and surroundings. It even rings when time's up with the app closed.</p></div>
+      <div class="card"><div class="ic">🧴</div><h3>Sunscreen smart</h3><p>Tell it your SPF and it recalculates your safe window. Reapplication reminders during longer sessions.</p></div>
+      <div class="card"><div class="ic">📈</div><h3>Progress tracking</h3><p>Every session logged. Watch your weekly goal fill up and your tan build safely, week after week.</p></div>
+      <div class="card"><div class="ic">💬</div><h3>Sunny, your AI assistant</h3><p>Questions about tanning, SPF, or skin safety? Ask Sunny anytime, right inside the app.</p></div>
+    </div>
+  </section>
 
-<h2>Data Retention &amp; Deletion</h2>
-<p>You can delete your account and all associated cloud data at any time from the Profile screen,
-or by contacting us. Local data is removed when you delete the app.</p>
+  <section class="steps">
+    <h2 class="sec-title">Three steps to your best tan</h2>
+    <p class="sec-sub">Set up once, then just check the app before you head outside.</p>
+    <div class="step-row">
+      <div class="step"><div class="num">1</div><h3>Snap a selfie</h3><p>AI detects your skin type, or pick it yourself. Takes under a minute.</p></div>
+      <div class="step"><div class="num">2</div><h3>Check your time</h3><p>The app reads live UV at your location and gives you today's safe session length.</p></div>
+      <div class="step"><div class="num">3</div><h3>Tan with the timer</h3><p>Start your session and relax. You'll get an alert the moment it's time to head in.</p></div>
+    </div>
+  </section>
+</div>
 
-<h2>Children's Privacy</h2>
-<p>Perfect Tan is not directed at children under 13, and we do not knowingly collect data from
-them.</p>
+<div class="final">
+  <h2>Golden, not burned.</h2>
+  <p>Join Perfect Tan and get your personalized tanning plan in the next two minutes.</p>
+  <a class="store-btn" href="https://apps.apple.com/app/id6778636219">Download on the App Store</a>
+  <p class="fine">Free 7-day trial · $0.49/week or $19.99/year · Cancel anytime</p>
+</div>
 
-<h2>Health Disclaimer</h2>
-<p>Perfect Tan provides general guidance based on UV data and your stated skin type. It is not
-medical advice and cannot prevent sunburn or skin damage. Always use sunscreen and consult a
-dermatologist for medical concerns.</p>
+<footer>
+  © 2026 MUPPBURY HOLDINGS LLC ·
+  <a href="privacy.html">Privacy Policy</a> ·
+  <a href="terms.html">Terms of Service</a> ·
+  <a href="mailto:support@perfecttan.app">Contact</a>
+</footer>
 
-<h2>Contact</h2>
-<p>Questions? Email us at <strong>support@perfecttan.app</strong> (replace with your support
-email before publishing).</p>
 </body>
 </html>
