@@ -183,18 +183,13 @@
     </div>
 
     <div class="hero-phone">
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="p-loc">📍 Myrtle Beach, SC</div>
-          <div class="uv-ring"><div class="uv-inner">
-            <div class="uv-num">6.2</div>
-            <div class="uv-lab">UV INDEX</div>
-          </div></div>
-          <div class="p-pill">Great tanning conditions</div>
-          <div class="p-card"><span>Your session today</span><span class="v">24 min</span></div>
-          <div class="p-card"><span>Best time</span><span class="v">1 PM</span></div>
-          <div class="p-go">Start Tanning</div>
+      <div style="position:relative;width:300px;">
+        <div style="border-radius:46px;background:#1f2430;border:11px solid #1f2430;box-shadow:0 30px 70px rgba(31,36,48,0.3);overflow:hidden;">
+          <video id="heroVideo" src="videos/single-protect-skin.mp4" autoplay muted loop playsinline
+                 style="display:block;width:100%;border-radius:35px;"></video>
         </div>
+        <button onclick="toggleHeroMute()" id="muteBtn" aria-label="Unmute"
+                style="position:absolute;bottom:18px;right:18px;border:none;background:rgba(0,0,0,0.55);color:#fff;width:48px;height:48px;border-radius:50%;font-size:19px;cursor:pointer;backdrop-filter:blur(4px);">🔇</button>
       </div>
     </div>
   </div>
@@ -231,6 +226,19 @@
       <div class="step"><div class="num">3</div><h3>Tan with the timer</h3><p>Start your session and relax. You'll get an alert the moment it's time to head in.</p></div>
     </div>
   </section>
+
+  <section style="padding:8px 0 72px;">
+    <h2 class="sec-title">See it in action</h2>
+    <p class="sec-sub">Your hook adapts to your goals. Tap any phone to hear it.</p>
+    <div style="display:flex;gap:22px;justify-content:center;flex-wrap:wrap;">
+      <video class="gal" onclick="tapVideo(this)" src="videos/all-four.mp4" autoplay muted loop playsinline
+             style="width:230px;border-radius:30px;border:9px solid #1f2430;box-shadow:0 20px 50px rgba(31,36,48,0.22);cursor:pointer;"></video>
+      <video class="gal" onclick="tapVideo(this)" src="videos/single-perfect-tan.mp4" autoplay muted loop playsinline
+             style="width:230px;border-radius:30px;border:9px solid #1f2430;box-shadow:0 20px 50px rgba(31,36,48,0.22);cursor:pointer;"></video>
+      <video class="gal" onclick="tapVideo(this)" src="videos/triple-tan-smart-track.mp4" autoplay muted loop playsinline
+             style="width:230px;border-radius:30px;border:9px solid #1f2430;box-shadow:0 20px 50px rgba(31,36,48,0.22);cursor:pointer;"></video>
+    </div>
+  </section>
 </div>
 
 <div class="final">
@@ -246,6 +254,18 @@
   <a href="terms.html">Terms of Service</a> ·
   <a href="mailto:support@perfecttan.app">Contact</a>
 </footer>
+
+<script>
+function toggleHeroMute(){
+  var v=document.getElementById('heroVideo'),b=document.getElementById('muteBtn');
+  v.muted=!v.muted; b.textContent=v.muted?'🔇':'🔊';
+  if(!v.muted){v.play();}
+}
+function tapVideo(v){
+  document.querySelectorAll('video.gal').forEach(function(x){if(x!==v)x.muted=true;});
+  v.muted=!v.muted; if(!v.muted)v.play();
+}
+</script>
 
 </body>
 </html>
